@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import emoji
+import re
 
 # 設定瀏覽器選項
 options = webdriver.ChromeOptions()
