@@ -6,33 +6,16 @@ on:
   pull_request:
     branches: [ "main" ]
 
-name: Deploy Application
-
-# 触发条件：每次推送到 main 分支时执行
-on:
-  push:
-    branches:
-      - main
-
-# 工作流的具体内容
 jobs:
-  build:
-    # 定义运行环境，这里选择的是最新的 Ubuntu
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: 检出仓库代码
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    # Step 2: 安装依赖（根据你的项目需要调整）
     - name: Install dependencies
       run: |
-        # 例如针对 Node.js 项目
-         pip install -r requirements.txt
-         
-    # Step 3: 构建应用（根据你的项目需要调整）
-    - name: Build application
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests
       run: |
-        # 例如针对 Node.js 项目
-         python 591.py
+        python 591.py
