@@ -20,4 +20,5 @@ jobs:
 
     - name: Run tests
       run: |
-        python main/591.py
+        python 591.py
+        working-directory: main
