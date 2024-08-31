@@ -20,4 +20,4 @@ jobs:
 
     - name: Run tests
       run: |
-        python 591.py
+        python main/591.py
