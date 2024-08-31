@@ -2,7 +2,7 @@ name: Django CI
 
 on:
   push:
-    branches: [ "591broadcast" ]
+    branches: [ "main" ]
 jobs:
   deploy:
     runs-on: ubuntu-latest
