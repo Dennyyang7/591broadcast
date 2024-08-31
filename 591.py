@@ -115,7 +115,7 @@ for item in rental_items:
         update_info = "無更新信息"
 
     # 輸出結果
-    print(f"標題: {title}")
+    """print(f"標題: {title}")
     print(f"鏈接: {link}")
     print(f"房型: {house_tag}")
     print(f"地址: {address}")
@@ -124,7 +124,7 @@ for item in rental_items:
     print(f"距離: {distance_info}")
     print(f"價格: {price} 元/月")
     print(f"更新信息: {update_info}")
-    print("-" * 30)
+    print("-" * 30)"""
 
 # 表情符號
 
@@ -137,13 +137,13 @@ for item in rental_items:
             f"\n標題: {title}" +
             f"\n鏈接: {link}" +
             emoji.emojize('\n :house: ') + f"房型: {house_tag}" +
-            emoji.emojize('\n :map: ') + f"地址: {address}" +
-            emoji.emojize('\n :area: ' ) + f"坪數: {area}" +
-            emoji.emojize('\n :floor: ') + f"樓層: {floor}" +
-            emoji.emojize('\n :distance: ') + f"距離: {distance_info}" +
-            emoji.emojize('\n :NTD: ') + f"價格: {price} 元/月" +
+            emoji.emojize('\n :world_map: ') + f"地址: {address}" +
+            emoji.emojize('\n :bed: ' ) + f"坪數: {area}" +
+            emoji.emojize('\n :department_store: ') + f"樓層: {floor}" +
+            emoji.emojize('\n :train: ') + f"距離: {distance_info}" +
+            emoji.emojize('\n :money_with_wings: ') + f"價格: {price} 元/月" +
             emoji.emojize('\n :alarm_clock: ') + f"更新信息: {update_info}" +
-            emoji.emojize('\n\n :tada: 看更詳細點↓網址 \n ') + f"{link}"
+            emoji.emojize('\n\n :globa_with_meridians: 看更詳細點↓網址 \n ') + f"{link}"
         )
         print(msg)
         lineNotifyMessage(token, msg)
