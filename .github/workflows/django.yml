@@ -3,8 +3,6 @@ name: Django CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   deploy:
@@ -20,5 +18,4 @@ jobs:
 
     - name: Run tests
       run: |
-        python 591.py
-        working-directory: main
+        ./591.py
