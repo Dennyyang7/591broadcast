@@ -69,8 +69,8 @@ def lineNotifyMessage(token, msg):
 for item in rental_items:
     # 提取標題和鏈接
     title_tag = item.find("a", class_="link")
-    title = title_tag.get_text().strip() if title_tag else "無標題"
-    link = title_tag['href'] if title_tag else "無鏈接"
+    title = title_tag.get_text().strip() if title_tag else "non title"
+    link = title_tag['href'] if title_tag else "non link"
     
     # 提取房型
     house_tag = item.find("div", class_="item-info-txt")
@@ -90,8 +90,8 @@ for item in rental_items:
 
     # 提取坪數和樓層
     details_tags = item.find_all("span", class_="line")
-    area = details_tags[0].get_text().strip() if len(details_tags) > 0 else "無坪數"
-    floor = details_tags[1].get_text().strip() if len(details_tags) > 1 else "無樓層"
+    area = details_tags[0].get_text().strip() if len(details_tags) > 0 else "no area"
+    floor = details_tags[1].get_text().strip() if len(details_tags) > 1 else "no floors"
     
     # 提取距離信息
     distance_info = "無距離信息"
@@ -103,7 +103,7 @@ for item in rental_items:
 
     # 提取價格
     price_tag = item.find("div", class_="item-info-price")
-    price = price_tag.find("strong").get_text().strip() if price_tag else "無價格"
+    price = price_tag.find("strong").get_text().strip() if price_tag else "no price"
 
     # 提取更新信息
     update_tag = item.find("div", class_="item-info-txt role-name ml-2px mt-2px mb-8px")
@@ -151,4 +151,4 @@ for item in rental_items:
         print('-------------')
 
 # 傳送LINE訊息
-lineNotifyMessage("申請的權杖", msg)  
+lineNotifyMessage("permission", msg)  
