@@ -48,7 +48,7 @@ soup = BeautifulSoup(response.text, "html.parser")
 rental_items = soup.find_all("div", class_="item-info")
 token = "04TBGaQS4upFGvoWwTpfsEIUUFBdbnmum666Y8ZgqY2"
 
-def lineNotifyMessage(token, msg):
+def lineNotifyMessage(token, msg, img):
     # headers 這兩項必帶
     # token 為 LINE Notify 申請的權杖
     headers = {
@@ -57,7 +57,7 @@ def lineNotifyMessage(token, msg):
     }
 
     # message: 要顯示的文字
-    message = {'message': msg}
+    message = {'message': msg, 'imageThumbnail' : img}
     
     #透過 POST 傳送
     req = requests.post("https://notify-api.line.me/api/notify", headers = headers, data = message)
@@ -114,6 +114,9 @@ for item in rental_items:
             hours = match.group(1)
     else:
         update_info = "無更新信息"
+    
+    #圖片
+    img = item.find("img").get("img-container")
 
     # 輸出結果
     '''print(f"標題: {title}")
@@ -134,7 +137,7 @@ for item in rental_items:
     if int(hours) <= 24:
         # LINE訊息
         msg = (
-            emoji.emojize('\n小幫手來啦~ :relaxed: \n租屋網更新資訊啦! :boom: \n :mega: ') +
+            emoji.emojize('\nDenny推播小幫手~ :flexed_biceps: \n591網站更新啦!  \n ') +
             f"\n標題: {title}" +
             f"\n鏈接: {link}" +
             emoji.emojize('\n :house: ') + f"房型: {house_tag}" +
@@ -147,8 +150,8 @@ for item in rental_items:
             emoji.emojize('\n\n :globe_with_meridians: 看更詳細點↓網址 \n ') + f"{link}"
         )
         print(msg)
-        lineNotifyMessage(token, msg)
+        lineNotifyMessage(token, msg, img)
         print('-------------')
 
 # 傳送LINE訊息
-lineNotifyMessage("permission", msg)  
+lineNotifyMessage("permission", msg, img)  
