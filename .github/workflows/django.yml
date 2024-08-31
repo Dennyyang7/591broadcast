@@ -17,5 +17,4 @@ jobs:
         pip install selenium==4.24.0
 
     - name: Run tests
-      run: |
-        ./591.py
+      run: python 591.py
