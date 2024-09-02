@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
     - name: Install dependencies
       run: |
         pip install requests==2.28.1
@@ -22,5 +20,6 @@ jobs:
 
     - name: Run tests
       run: |
-          $GITHUB_WORKSPACE/
+          python 591.py
+          python 591_tamsui.py
 
