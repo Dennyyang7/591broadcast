@@ -22,5 +22,5 @@ jobs:
 
     - name: Run tests
       run: |
-          python 591.py
-          python 591_tamsui.py
+          python $GITHUB_WORKSPACE/591.py
+          python $GITHUB_WORKSPACE/591_tamsui.py
