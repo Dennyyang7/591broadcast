@@ -76,7 +76,7 @@ for item in rental_items:
     house_tag = item.find("div", class_="item-info-txt")
     house = house_tag.find_all("span")
     for allhouse in house:
-        if "淡水區" in allhouse.get_text():
+        if "房"or "家" in allhouse.get_text():
             house_tag = allhouse.get_text(strip=True)
             break
 
@@ -150,6 +150,3 @@ for item in rental_items:
         print(msg)
         lineNotifyMessage(token, msg)
         print('-------------')
-
-# 傳送LINE訊息
-lineNotifyMessage("permission", msg)  
