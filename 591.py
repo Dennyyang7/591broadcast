@@ -11,7 +11,7 @@ options.add_argument('--headless')  # 不開啟實體瀏覽器介面
 options.add_argument('--disable-gpu')
 
 # 要抓取頁面的 URL
-url = "https://rent.591.com.tw/list?section=8,9&price=5000_10000,10000_20000&sort=posttime_desc"
+url = "https://rent.591.com.tw/list?price=7000$_20000$&region=1&sort=posttime_desc&section=8,9"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 }
