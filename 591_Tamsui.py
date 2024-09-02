@@ -11,7 +11,7 @@ options.add_argument('--headless')  # 不開啟實體瀏覽器介面
 options.add_argument('--disable-gpu')
 
 # 要抓取頁面的 URL
-url = "https://rent.591.com.tw/list?section=50&price=6000$_20000$&region=3&sort=posttime_desc"
+url = "https://rent.591.com.tw/list?section=50&price=6000$_18000$&region=3&sort=posttime_desc"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 }
@@ -136,7 +136,7 @@ for item in rental_items:
     if int(hours) <= 24:
         # LINE訊息
         msg = (
-            emoji.emojize('\nDenny推播小幫手~ :flexed_biceps: \n591網站更新啦!  \n ') +
+            emoji.emojize('\nDenny推播小幫手~ :flexed_biceps: \n591 淡水區網站更新啦!  \n ') +
             f"\n標題: {title}" +
             emoji.emojize('\n :house: ') + f"房型: {house_tag}" +
             emoji.emojize('\n :world_map: ') + f"地址: {address}" +
