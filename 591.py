@@ -78,6 +78,7 @@ for item in rental_items:
     for allhouse in house:
         if "北投區" or "士林區" in div.get_text():
             house_tag = allhouse.get_text(strip=True)
+            print("%s",format(allhouse.get_text(strip=True)))
             break
 
     # 取得地址
@@ -136,7 +137,7 @@ for item in rental_items:
     if int(hours) <= 24:
         # LINE訊息
         msg = (
-            emoji.emojize('\nDenny推播小幫手~ :flexed_biceps: \n591網站更新啦!  \n ') +
+            emoji.emojize('\nDenny推播小幫手~ :flexed_biceps: \n591士林、北投區，網站更新啦!  \n ') +
             f"\n標題: {title}" +
             emoji.emojize('\n :house: ') + f"房型: {house_tag}" +
             emoji.emojize('\n :world_map: ') + f"地址: {address}" +
@@ -150,6 +151,3 @@ for item in rental_items:
         print(msg)
         lineNotifyMessage(token, msg)
         print('-------------')
-
-# 傳送LINE訊息
-lineNotifyMessage("permission", msg)  
