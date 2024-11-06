@@ -23,6 +23,6 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m 591
+        python -m 591n
         python -m 591_Tamsui
 
