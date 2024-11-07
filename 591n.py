@@ -73,5 +73,5 @@ for item in rental_items:
         if title == "無標題":
             continue        
         print(msg)
-        #lineNotifyMessage(token, msg)
+        lineNotifyMessage(token, msg)
         print('-------------')
